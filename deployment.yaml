@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: eks-nginx
-  name: eks-nginx
+    app: hpe-nginx
+  name: hpe-nginx
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: eks-nginx
@@ -15,8 +15,9 @@ spec:
         app: eks-nginx
     spec:
       containers:
-      - image: 615650658789.dkr.ecr.ap-northeast-2.amazonaws.com/k8s-cluster-repo:v1.0
-        name: eks-nginx
+      - image: 615650658789.dkr.ecr.ap-northeast-2.amazonaws.com/k8s-cluster-repo:v1.14
+        name: hpe-nginx
+
 
 
 
